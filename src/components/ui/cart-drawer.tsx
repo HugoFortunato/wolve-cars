@@ -10,9 +10,9 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 export default function CartDrawer() {
   const useStore = useCartStore();
 
-  // const totalPrice = useStore.cart.reduce((acc: any, item: any) => {
-  //   return acc + item.price! * item.quantity!;
-  // }, 0);
+  const totalPrice = useStore.cart.reduce((acc: any, item: any) => {
+    return acc + item.price! * item.quantity!;
+  }, 0);
 
   return (
     <Sheet>
