@@ -1,11 +1,10 @@
-'use client';
-
-import { useCartStore } from '@/store';
 import Image from 'next/image';
-// import Checkout from './Checkout';
+import { useCartStore } from '@/store';
 import { formatPrice } from '@/lib/utils';
-// import CheckoutButton from './checkout-button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+
+// import Checkout from './Checkout';
+// import CheckoutButton from './checkout-button';
 
 export default function CartDrawer() {
   const useStore = useCartStore();
