@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Cart from './cart';
 import Image from 'next/image';
-import model from '/public/wolf.png';
+import wolf from '/public/wolf.png';
+import Cart from './ui/cart';
 
 export function Navbar() {
   return (
@@ -10,7 +10,7 @@ export function Navbar() {
         href="/"
         className="uppercase font-bold text-md h-12 flex items-center"
       >
-        <Image src={model} alt="logo" width={60} height={80} />
+        <Image src={wolf} alt="logo" width={60} height={80} />
       </Link>
 
       <div className="flex items-center gap-8">

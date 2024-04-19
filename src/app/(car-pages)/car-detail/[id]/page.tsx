@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 import { getCarDetail } from '@/graphql/car-list';
 import { CarType, useCartStore } from '@/store';
-import CarContent from '@/components/ui/car-content';
+import CarContent from '@/components/car-content';
 
 type CarDetailParams = {
   params: {
