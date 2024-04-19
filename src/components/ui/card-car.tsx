@@ -14,23 +14,23 @@ import { formatPrice } from '@/lib/utils';
 
 type CardListTypes = {
   car: CarType;
-  handleAddToCart: (car: CarType) => void;
+  pushToCarDetail: (car: CarType) => void;
 };
 
-export default function CardCar({ car, handleAddToCart }: CardListTypes) {
+export default function CardCar({ car, pushToCarDetail }: CardListTypes) {
   return (
     <Card className="w-[250px]">
       <CardHeader>
-        <CardTitle></CardTitle>
+        <CardTitle>{car?.name}</CardTitle>
 
-        <CardDescription>Car Description</CardDescription>
+        <CardDescription>{car?.description}</CardDescription>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="flex justify-center">
         <Image
           src={car?.image?.url}
-          width={500}
-          height={300}
+          width={160}
+          height={10}
           alt="Kitten"
           className="rounded-md"
         />
@@ -42,7 +42,7 @@ export default function CardCar({ car, handleAddToCart }: CardListTypes) {
         </span>
       </CardContent>
 
-      <CardBottom onClickAddToCart={() => handleAddToCart(car)} />
+      <CardBottom onRedirectToCarDetail={() => pushToCarDetail(car)} />
     </Card>
   );
 }

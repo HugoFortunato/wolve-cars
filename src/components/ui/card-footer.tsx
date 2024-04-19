@@ -5,14 +5,14 @@ import { Button } from './button';
 import { CardFooter } from '@/components/ui/card';
 
 type CardFooterTypes = {
-  onClickAddToCart: () => void;
+  onRedirectToCarDetail: () => void;
 };
 
-export default function CardBottom({ onClickAddToCart }: CardFooterTypes) {
+export default function CardBottom({ onRedirectToCarDetail }: CardFooterTypes) {
   return (
     <CardFooter className="flex justify-between gap-5">
-      <Button className="w-full" onClick={onClickAddToCart}>
-        Rent
+      <Button className="w-full" onClick={onRedirectToCarDetail}>
+        Detail
       </Button>
     </CardFooter>
   );

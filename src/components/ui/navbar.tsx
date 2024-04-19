@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import Cart from './cart';
 import Image from 'next/image';
-import model from '/public/model3.svg';
+import model from '/public/wolf.png';
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 w-full flex items-center py-2 px-24 justify-between z-50 bg-white text-gray-300 border-b border-gray-300">
+    <nav className="fixed top-0 w-full h-20 flex items-center py-2 px-24 justify-between z-50 bg-white text-gray-300 border-b border-gray-300">
       <Link
         href="/"
         className="uppercase font-bold text-md h-12 flex items-center"
       >
-        <Image src={model} alt="logo" width={150} height={150} />
+        <Image src={model} alt="logo" width={60} height={80} />
       </Link>
 
       <div className="flex items-center gap-8">
