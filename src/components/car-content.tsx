@@ -10,9 +10,9 @@ import {
 } from '@/components/ui/card';
 import Image from 'next/image';
 import { formatPrice } from '@/lib/utils';
-import { CarDetailType } from '@/app/car-detail/[id]/page';
-import { Button } from './button';
 import { useCartStore } from '@/store';
+import { Button } from './ui/button';
+import { CarDetailType } from '@/app/(car-pages)/car-detail/[id]/page';
 
 export default function CarContent({ carList }: CarDetailType) {
   const useStore = useCartStore();

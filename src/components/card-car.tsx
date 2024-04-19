@@ -8,9 +8,9 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import Image from 'next/image';
-import CardBottom from './card-footer';
 import { CarType } from '@/store';
 import { formatPrice } from '@/lib/utils';
+import CardBottom from './ui/card-footer';
 
 type CardListTypes = {
   car: CarType;
