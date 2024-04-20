@@ -11,7 +11,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { useSession, signIn } from 'next-auth/react';
-import Cookie from 'js-cookie';
 
 export default function AuthPage() {
   const router = useRouter();
@@ -29,9 +28,7 @@ export default function AuthPage() {
           <div>
             <CardHeader className="flex justify-center items-center gap-6">
               <Image src="/github.webp" alt="logo" width={60} height={60} />
-              <CardDescription>
-                Pressione o botão para fazer login com sua conta do GitHub
-              </CardDescription>
+              <CardDescription>Press the button below to login</CardDescription>
             </CardHeader>
 
             <CardContent>
