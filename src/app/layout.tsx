@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import './globals.css';
+import { Providers } from '@/components/provider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -25,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cnConfig}>{children}</body>
+      <body className={cnConfig}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

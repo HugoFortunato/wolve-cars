@@ -12,8 +12,8 @@ export default function HomePage() {
     <>
       <img src="/wolf.gif" alt="wolf gif" width={650} />
 
-      <Button variant="outline" onClick={() => router.push('/car-list')}>
-        Explore collection
+      <Button variant="outline" onClick={() => router.push('/auth')}>
+        Explore
       </Button>
     </>
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import { getCarsList } from '@/graphql/car-list';
 import CarsList from '@/components/cars-list';
 
