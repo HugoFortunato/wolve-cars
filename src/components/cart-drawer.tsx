@@ -2,16 +2,16 @@ import Image from 'next/image';
 import { useCartStore } from '@/store';
 import { formatPrice } from '@/lib/utils';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import CheckoutButton from './checkout-button';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
-// import Checkout from './Checkout';
-// import CheckoutButton from './checkout-button';
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
+);
 
 export default function CartDrawer() {
   const useStore = useCartStore();
-
-  // const totalPrice = useStore.cart.reduce((acc: any, item: any) => {
-  //   return acc + item.price! * item.quantity!;
-  // }, 0);
 
   return (
     <Sheet>
@@ -62,6 +62,10 @@ export default function CartDrawer() {
             </div>
           </div>
         ))}
+
+        <Elements stripe={stripePromise}>
+          <CheckoutButton />
+        </Elements>
       </SheetContent>
     </Sheet>
   );
