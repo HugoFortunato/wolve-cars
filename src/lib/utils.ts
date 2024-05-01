@@ -11,5 +11,5 @@ export const formatPrice = (price: number | null) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
-  }).format(price * 1000);
+  }).format(price);
 };
