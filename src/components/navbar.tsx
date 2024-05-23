@@ -8,7 +8,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 w-full h-20 flex items-center py-2 px-24 justify-between z-50 bg-white text-gray-300 border-b border-gray-300">
       <Link
-        href="/car-list"
+        href="/"
         className="uppercase font-bold text-md h-12 flex items-center"
       >
         <Image src={wolf} alt="logo" width={60} height={80} />
@@ -16,7 +16,6 @@ export function Navbar() {
 
       <div className="flex items-center gap-8">
         <Cart />
-        <AuthButton />
       </div>
     </nav>
   );

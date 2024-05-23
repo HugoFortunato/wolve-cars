@@ -18,5 +18,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/car-list', '/car-detail/:id'],
+  matcher: [],
 };
