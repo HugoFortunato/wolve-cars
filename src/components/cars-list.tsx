@@ -2,10 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 
-import { CarType, useCartStore } from '@/store';
+import { CarType } from '@/store';
 import CardCar from './card-car';
 import { useRouter } from 'next/navigation';
-import { useSession } from 'next-auth/react';
 
 export type CarListResponse = {
   carLists: CarType[];
@@ -13,7 +12,6 @@ export type CarListResponse = {
 
 export default function CarsList(carList: CarListResponse) {
   const router = useRouter();
-  const session = useSession();
 
   const [currentCarList, setCurrentCarList] =
     useState<CarListResponse>(carList);
@@ -23,10 +21,6 @@ export default function CarsList(carList: CarListResponse) {
   useEffect(() => {
     setCurrentCarList(carList);
   }, [carList]);
-
-  if (!session.data) {
-    router.push('/');
-  }
 
   return (
     <>

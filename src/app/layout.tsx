@@ -26,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cnConfig}>
-        <Providers>{children}</Providers>
-      </body>
+      <body className={cnConfig}>{children}</body>
     </html>
   );
 }
