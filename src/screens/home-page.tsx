@@ -9,8 +9,8 @@ import {
   ContactShadows,
   OrbitControls,
 } from '@react-three/drei';
-import { Lamborghini } from './lamborghini';
-import { Button } from './ui/button';
+import { Lamborghini } from '../components/lamborghini';
+import { Button } from '@/components/ui/button';
 
 export default function HomePage() {
   const router = useRouter();
