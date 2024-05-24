@@ -43,7 +43,7 @@ export default function CartDrawer() {
             <Image src={item.image.url} alt="car" width={120} height={120} />
             <div>
               <h2 className="w-42 truncate">{item.name}</h2>
-              <h2>Quantidade: {item.quantity}</h2>
+              <h2>Quantity: {item.quantity}</h2>
               <p className="text-teal-600 text-sm font-bold">
                 {formatPrice(item.price)}
               </p>
@@ -51,13 +51,13 @@ export default function CartDrawer() {
                 className="py-1 px-2 border rounded-md mt-2 text-sm mr-1"
                 onClick={() => useStore.addToCart(item)}
               >
-                Adicionar
+                Add
               </button>
               <button
                 className="py-1 px-2 border rounded-md mt-2 text-sm "
                 onClick={() => useStore.removeFromCart(item)}
               >
-                Remover
+                Remove
               </button>
             </div>
           </div>

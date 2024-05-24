@@ -9,7 +9,7 @@ import {
   ContactShadows,
   OrbitControls,
 } from '@react-three/drei';
-import { Lamborghini } from '../components/lamborghini';
+import { Lamborghini } from '@/components/motion/lamborghini';
 import { Button } from '@/components/ui/button';
 
 export default function HomePage() {
