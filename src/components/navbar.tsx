@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import wolf from '/public/wolf.png';
 import Cart from './ui/cart';
+import AuthButton from './auth-button';
 
 export function Navbar() {
   return (
