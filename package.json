@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "json-server": "json-server --watch db.json --port 3004"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
@@ -24,6 +25,7 @@
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "js-cookie": "^3.0.5",
+    "json-server": "^1.0.0-beta.1",
     "leva": "^0.9.35",
     "lucide-react": "^0.368.0",
     "next": "14.2.1",
