@@ -3,7 +3,7 @@
 import { use } from 'react';
 
 export async function getUsers() {
-  const response = await fetch('http://localhost:3004/users', {
+  const response = await fetch('http://localhost:3000/api/get-users', {
     method: 'GET',
     cache: 'no-store',
     redirect: 'follow',
@@ -19,7 +19,7 @@ export function Users() {
 
   return (
     <>
-      {currentUsers.map((user: any) => (
+      {currentUsers.data.map((user: any) => (
         <div key={user.userId}>
           <p>{user.userId}</p>
           <p>{user.name}</p>
