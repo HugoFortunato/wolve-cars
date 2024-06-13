@@ -38,7 +38,7 @@ export default function CarContent({ carList }: CarDetailType) {
       </CardContent>
 
       <CardContent>
-        <span className="text-xl font-bold text-gray-900 d3eark:text-gray-100">
+        <span className="animate-fade-in-right text-xl font-bold text-gray-900 dark:text-gray-100 ">
           {formatPrice(carList.price)}
         </span>
       </CardContent>

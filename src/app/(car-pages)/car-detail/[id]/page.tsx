@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { Button } from '@/components/ui/button';
-
 import { getCarDetail } from '@/graphql/car-list';
 import { CarType, useCartStore } from '@/store';
 import CarContent from '@/components/car-content';

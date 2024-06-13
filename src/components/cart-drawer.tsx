@@ -64,7 +64,9 @@ export default function CartDrawer() {
         ))}
 
         <Elements stripe={stripePromise}>
-          <CheckoutButton />
+          <div className="flex justify-end">
+            <CheckoutButton />
+          </div>
         </Elements>
       </SheetContent>
     </Sheet>
