@@ -14,8 +14,6 @@ export async function getUsers() {
   return data;
 }
 
-//comment
-
 export function Users() {
   const currentUsers = use(getUsers());
 
