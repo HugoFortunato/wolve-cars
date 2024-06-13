@@ -1,4 +1,7 @@
+import { Users } from '@/components/users';
 import axios from 'axios';
+import { revalidatePath, revalidateTag } from 'next/cache';
+import { Suspense } from 'react';
 
 export default function CreateUser() {
   async function createUser(formData: FormData) {
@@ -18,19 +21,30 @@ export default function CreateUser() {
     } catch (error) {
       console.error('Error creating invoice:', error);
     }
+
+    revalidatePath('/api/get-users');
+    revalidateTag('users');
   }
 
   return (
-    <form action={createUser} className="mt-10">
-      <div>
-        <label htmlFor="userId">User ID</label>
-        <input type="text" name="userId" id="userId" required />
-      </div>
-      <div>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" required />
-      </div>
-      <button type="submit">Create Invoice</button>
-    </form>
+    <>
+      <form action={createUser} className="mt-10">
+        <div>
+          <label htmlFor="userId">User ID</label>
+          <input type="text" name="userId" id="userId" required />
+        </div>
+        <div>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <button type="submit">Create Invoice</button>
+      </form>
+
+      <div></div>
+
+      <Suspense fallback={<p>waiting for message...</p>}>
+        <Users />
+      </Suspense>
+    </>
   );
 }
