@@ -19,7 +19,6 @@ export default function CheckoutButton() {
   const { cart } = useCartStore();
 
   const handleCheckout = async (products: Product) => {
-    console.log(products, 'products');
     try {
       if (!stripe) return null;
 
