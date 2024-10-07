@@ -1,7 +1,7 @@
 import { Button } from './ui/button';
 import { useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
-import { useCartStore } from '@/store';
+import { CarType, useCartStore } from '@/store';
 
 type Product = {
   name: string;
@@ -18,8 +18,7 @@ export default function CheckoutButton() {
   const stripe = useStripe();
   const { cart } = useCartStore();
 
-  const handleCheckout = async (products: Product) => {
-    console.log(products, 'products');
+  const handleCheckout = async (products: CarType[]) => {
     try {
       if (!stripe) return null;
 
@@ -32,7 +31,7 @@ export default function CheckoutButton() {
   };
 
   return (
-    <Button className="w-full" onClick={() => handleCheckout(cart as any)}>
+    <Button className="w-full" onClick={() => handleCheckout(cart)}>
       Checkout
     </Button>
   );

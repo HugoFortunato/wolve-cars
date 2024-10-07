@@ -1,7 +1,7 @@
 import { CarType } from '@/store';
 import { request, gql } from 'graphql-request';
 
-export const getCarsList = async (): Promise<CarType[] | any> => {
+export const getCarsList = async (): Promise<CarType[]> => {
   const query = gql`
     query Assets {
       carLists {
@@ -24,7 +24,7 @@ export const getCarsList = async (): Promise<CarType[] | any> => {
   return carsListResult as CarType[];
 };
 
-export const getCarDetail = async (id: string): Promise<CarType | any> => {
+export const getCarDetail = async (id: string): Promise<CarType> => {
   const query = gql`
     query MyQuery($id: ID!) {
       carList(where: { id: $id }) {
@@ -45,5 +45,28 @@ export const getCarDetail = async (id: string): Promise<CarType | any> => {
     { id }
   );
 
-  return carDetailResult as CarType[];
+  return carDetailResult as CarType;
+};
+
+export const getCarComments = async (id: string, stage = 'DRAFT') => {
+  const query = gql`
+    query MyQuery($id: ID!, $stage: Stage!) {
+      carList(where: { id: $id }, stage: $stage) {
+        id
+        name
+        stage
+        comments {
+          comment
+        }
+      }
+    }
+  `;
+
+  const carCommentsResult = await request(
+    'https://api-sa-east-1.hygraph.com/v2/cluvx38bf14g507uwp82m73sn/master',
+    query,
+    { id, stage }
+  );
+
+  return carCommentsResult as CarType[];
 };
