@@ -40,12 +40,17 @@ export default function CartDrawer() {
       <SheetContent>
         {useStore.cart.map((item) => (
           <div key={item.id} className="flex gap-4 py-4">
-            <Image src={item.image.url} alt="car" width={120} height={120} />
+            <Image
+              src={item?.image?.url || ''}
+              alt="car"
+              width={120}
+              height={120}
+            />
             <div>
               <h2 className="w-42 truncate">{item.name}</h2>
               <h2>Quantity: {item.quantity}</h2>
               <p className="text-teal-600 text-sm font-bold">
-                {formatPrice(item.price)}
+                {formatPrice(item.price || 0)}
               </p>
               <button
                 className="py-1 px-2 border rounded-md mt-2 text-sm mr-1"

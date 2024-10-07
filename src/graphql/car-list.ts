@@ -1,7 +1,7 @@
 import { CarType } from '@/store';
 import { request, gql } from 'graphql-request';
 
-export const getCarsList = async (): Promise<CarType[] | any> => {
+export const getCarsList = async (): Promise<CarType[]> => {
   const query = gql`
     query Assets {
       carLists {
@@ -24,7 +24,7 @@ export const getCarsList = async (): Promise<CarType[] | any> => {
   return carsListResult as CarType[];
 };
 
-export const getCarDetail = async (id: string): Promise<CarType | any> => {
+export const getCarDetail = async (id: string): Promise<CarType> => {
   const query = gql`
     query MyQuery($id: ID!) {
       carList(where: { id: $id }) {
@@ -45,7 +45,7 @@ export const getCarDetail = async (id: string): Promise<CarType | any> => {
     { id }
   );
 
-  return carDetailResult as CarType[];
+  return carDetailResult as CarType;
 };
 
 export const getCarComments = async (id: string, stage = 'DRAFT') => {

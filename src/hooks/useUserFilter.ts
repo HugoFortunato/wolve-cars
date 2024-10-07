@@ -35,7 +35,7 @@ function reducer(state: CarState, action: CarAction) {
 
     case ACTIONS_TYPES.SET_CAR_LIST_FILTER:
       const filteredCars = state.filteredCars.filter((car: CarType) =>
-        car.name.toLowerCase().includes(action.payload.toLowerCase())
+        car?.name?.toLowerCase().includes(action.payload.toLowerCase())
       );
 
       if (action.payload === '') {
